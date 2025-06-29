@@ -1,48 +1,25 @@
 import React from 'react';
 import styles from '../styles/Experience.module.css';
-
-const experiences = [
-  {
-    title: 'Centre for Career Planning and Development, Training and Placement Associate',
-    period: 'March 2023 - Present',
-    details: 'Planning and Placement Associate at NIT Warangal.'
-  },
-  {
-    title: 'Electrical Engineering Society, Additional Secretary',
-    period: 'July 2023 - April 2025',
-    details: 'Organizing and managing society events.'
-  }
-];
-
-const achievements = [
-  {
-    title: 'Top 3.4% in Amazon HackOn 5.0 – Idea submission round qualifier',
-    date: 'July 2025'
-  },
-  {
-    title: 'Winner of Inauzhon 2023.24 organized by Hitachi Company',
-    date: 'October 2023, NITW'
-  }
-];
+import { FaDownload } from 'react-icons/fa';
 
 const Experience = () => (
   <section className={styles.experience}>
-    <h1>Experience</h1>
-    <div className={styles.timeline}>
-      {experiences.map((exp, idx) => (
-        <div key={idx} className={styles.expCard}>
-          <h3>{exp.title}</h3>
-          <span>{exp.period}</span>
-          <p>{exp.details}</p>
-        </div>
-      ))}
+    <h1 className={styles.title}>Experience</h1>
+    <div className={styles.resumeBtnWrapper}>
+      <a href="/resume/resume.pdf" download className={styles.resumeBtn}>
+        <FaDownload className={styles.downloadIcon} /> Download Resume
+      </a>
     </div>
-    <h2>Achievements</h2>
-    <ul className={styles.achievements}>
-      {achievements.map((ach, idx) => (
-        <li key={idx}><strong>{ach.title}</strong> – {ach.date}</li>
-      ))}
-    </ul>
+    <div className={styles.timelineClassic}>
+      <div className={styles.timelineLine}></div>
+      <div className={styles.timelineEntry}>
+        <div className={styles.timelineDot}></div>
+        <div className={styles.timelineText}>
+          <span className={styles.timelineDate}>2022 – Present</span>
+          <span className={styles.timelineDesc}>Yet to receive my first job offer</span>
+        </div>
+      </div>
+    </div>
   </section>
 );
 

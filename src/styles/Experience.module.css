@@ -1,46 +1,120 @@
 .experience {
   padding: 6rem 1rem 2rem 1rem;
-  max-width: 900px;
-  margin: auto;
-  color: #222;
-  background: #f8f9fa;
-  border-radius: 16px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.04);
-}
-.timeline {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #fff;
+  background: #18191b;
+  border-radius: 18px;
+  box-shadow: 0 2px 24px rgba(0,0,0,0.10);
+  position: relative;
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+  align-items: center;
 }
-.expCard {
+.title {
+  color: #00ffe0;
+  font-weight: 800;
+  font-size: 2.3rem;
+  margin-bottom: 2.2rem;
+  text-align: center;
+}
+.resumeBtnWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.8rem;
+  width: 100%;
+}
+.resumeBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: #232526;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.8rem 2.2rem;
+  border-radius: 16px;
+  border: none;
+  text-decoration: none;
+  box-shadow: 0 2px 12px rgba(0,255,224,0.04);
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+}
+.resumeBtn:hover {
+  background: #00ffe0;
+  color: #18191b;
+  box-shadow: 0 0 16px 2px #00ffe0;
+}
+.downloadIcon {
+  font-size: 1.2rem;
+}
+.timelineClassic {
+  position: relative;
+  width: 100%;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 2.5rem;
+}
+.timelineLine {
+  position: absolute;
+  left: 38px;
+  top: 0;
+  width: 3px;
+  height: 60px;
+  background: linear-gradient(180deg, #fff 0%, #00ffe0 100%);
+  border-radius: 2px;
+  z-index: 0;
+  opacity: 0.7;
+}
+.timelineEntry {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+  min-height: 60px;
+}
+.timelineDot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
   background: #fff;
-  padding: 1.1rem 1.7rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  border-left: 4px solid #0072b1;
+  border: 2px solid #00ffe0;
+  box-shadow: 0 0 8px 1px #00ffe0;
+  margin-right: 1.5rem;
+  z-index: 2;
 }
-.achievements {
-  margin-top: 1rem;
-  padding-left: 1.2rem;
+.timelineText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-left: 0.2rem;
 }
-.achievements li {
-  margin-bottom: 0.5rem;
-  color: #0072b1;
-  font-weight: 600;
+.timelineDate {
   font-size: 1.05rem;
-}
-h1, h2 {
-  color: #0072b1;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-h3 {
-  color: #222;
+  color: #00ffe0;
   font-weight: 600;
-  margin-bottom: 0.2rem;
 }
-p, span {
-  color: #444;
-  font-size: 1rem;
+.timelineDesc {
+  font-size: 1.18rem;
+  color: #fff;
+  font-weight: 700;
+  margin-top: 0.1rem;
+}
+
+@media (max-width: 700px) {
+  .experience {
+    padding: 3rem 0.5rem 1.5rem 0.5rem;
+    max-width: 99vw;
+  }
+  .timelineClassic {
+    margin-top: 1.2rem;
+  }
+  .timelineDot {
+    margin-right: 1rem;
+  }
 } 
