@@ -1,0 +1,21 @@
+.backToTop {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: none;
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  width: auto;
+  height: auto;
+  font-size: 2.2rem;
+  cursor: pointer;
+  box-shadow: none;
+  z-index: 1001;
+  transition: color 0.2s;
+  padding: 0;
+}
+.backToTop:hover {
+  color: #ff9800;
+  background: none;
+} 
