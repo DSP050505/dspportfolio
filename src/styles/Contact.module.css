@@ -42,6 +42,11 @@ button:hover {
   margin-bottom: 1rem;
   font-weight: 600;
 }
+.error {
+  color: #ff4d4f;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
 .socials {
   margin-top: 1rem;
   display: flex;
