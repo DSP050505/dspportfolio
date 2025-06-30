@@ -8,10 +8,14 @@ import About from './pages/About';
 import Experience from './pages/Experience';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
+import Achievements from './pages/Achievements';
+import RateUsFloating from './components/RateUsFloating';
+import Rate from './pages/Rate';
 
 function App() {
   return (
     <Router>
+      <RateUsFloating />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -19,6 +23,8 @@ function App() {
         <Route path="/experience" element={<Experience />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/achievements" element={<Achievements />} />
+        <Route path="/rate" element={<Rate />} />
       </Routes>
       <Footer />
       <BackToTop />

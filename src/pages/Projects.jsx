@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import styles from '../styles/Projects.module.css';
 import { motion } from 'framer-motion';
 import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs, FaDatabase, FaStripe, FaServer } from 'react-icons/fa';
 import { SiExpress, SiPostgresql, SiSocketdotio, SiFirebase, SiVercel, SiRender } from 'react-icons/si';
+import { useLocation } from 'react-router-dom';
 
 const techIcons = {
   'React.js': <FaReact color="#00d8ff" />, // React blue
@@ -49,9 +50,11 @@ const projects = [
   }
 ];
 
-const ProjectCard = ({ project, reverse }) => (
+const ProjectCard = React.forwardRef(({ project, reverse, id }, ref) => (
   <motion.div
+    ref={ref}
     className={styles.projectRow + ' ' + (reverse ? styles.reverse : '')}
+    id={id}
     initial={{ opacity: 0, y: 60 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, amount: 0.3 }}
@@ -76,17 +79,28 @@ const ProjectCard = ({ project, reverse }) => (
       </div>
     </div>
   </motion.div>
-);
+));
 
-const Projects = () => (
-  <section className={styles.projects}>
-    <h1 className={styles.sectionTitle}>Projects</h1>
-    <div className={styles.projectsStack}>
-      {projects.map((proj, idx) => (
-        <ProjectCard key={idx} project={proj} reverse={idx % 2 === 1} />
-      ))}
-    </div>
-  </section>
-);
+const Projects = () => {
+  const location = useLocation();
+  const amazonRef = useRef(null);
+
+  useEffect(() => {
+    if (location.state && location.state.scrollTo === 'amazon-clone' && amazonRef.current) {
+      amazonRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }, [location]);
+
+  return (
+    <section className={styles.projects}>
+      <h1 className={styles.sectionTitle}>Projects</h1>
+      <div className={styles.projectsStack}>
+        <ProjectCard project={projects[0]} reverse={false} />
+        <ProjectCard project={projects[1]} reverse={true} ref={amazonRef} id="amazon-clone" />
+        <ProjectCard project={projects[2]} reverse={false} />
+      </div>
+    </section>
+  );
+};
 
 export default Projects; 
